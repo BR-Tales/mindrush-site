@@ -53,6 +53,18 @@
       position: relative;
     }
 
+    nav {
+      background: #222;
+      padding: 10px;
+      text-align: center;
+    }
+    nav a {
+      color: white;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
     .btn-download {
       display: inline-block;
       margin-top: 2rem;
@@ -115,6 +127,15 @@
       color: #777;
       font-size: 0.9rem;
     }
+
+      @media (max-width: 600px) {
+      nav a {
+        display: block;
+        margin: 10px 0;
+      }
+      .download-btn {
+        width: 100%;
+      }
   </style>
 </head>
 <body>
@@ -123,6 +144,13 @@
     <p>Sobrevive. Aprende. Vence.</p>
     <a class="btn-download" href="#download">Baixar Agora</a>
   </header>
+
+  <nav>
+    <a href="#sobre">Sobre o Jogo</a>
+    <a href="#download">Download</a>
+    <a href="#projeto">Sobre o Projeto</a>
+    <a href="#contato">Contato</a>
+  </nav>
 
   <main>
     <section>
