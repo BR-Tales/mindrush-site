@@ -4,8 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>MindRush</title>
-  <!-- Fontes: Orbitron para títulos, Open Sans para textos -->
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Open+Sans&display=swap" rel="stylesheet" />
+  <!-- Fontes Orbitron (títulos) e Exo 2 (texto) -->
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Exo+2&display=swap" rel="stylesheet">
   <style>
     * {
       margin: 0;
@@ -14,18 +14,19 @@
     }
 
     body {
-      font-family: 'Open Sans', sans-serif;
+      font-family: 'Exo 2', sans-serif;
       background: linear-gradient(180deg, #0a0a0a 0%, #111 100%);
       color: #fff;
-      line-height: 1.8;
+      line-height: 1.7;
     }
 
     header {
       background-color: rgba(0, 128, 255, 0.1);
-      padding: 4rem 2rem;
+      padding: 6rem 2rem 4rem;
       text-align: center;
       position: relative;
       overflow: hidden;
+      margin-top: 70px;
     }
 
     header::after {
@@ -40,41 +41,40 @@
     }
 
     header h1 {
-      font-family: 'Orbitron', sans-serif;
       font-size: 4rem;
       z-index: 1;
       position: relative;
       color: #00cfff;
-      margin-bottom: 0.5rem;
+      font-family: 'Orbitron', sans-serif;
     }
 
     header p {
-      font-size: 1.6rem;
-      margin-top: 0.5rem;
+      font-size: 1.5rem;
+      margin-top: 1rem;
       color: #ccc;
       z-index: 1;
       position: relative;
     }
 
     nav {
-      background: #222;
-      padding: 1rem 0;
+      background: #111;
+      padding: 15px 0;
       text-align: center;
       position: fixed;
       top: 0;
+      left: 0;
       width: 100%;
-      z-index: 10;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.7);
+      z-index: 100;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.5);
     }
 
     nav a {
+      font-family: 'Orbitron', sans-serif;
       color: white;
       margin: 0 20px;
       text-decoration: none;
       font-weight: bold;
-      font-family: 'Orbitron', sans-serif;
-      font-size: 1.1rem;
-      transition: color 0.3s ease;
+      transition: 0.3s;
     }
 
     nav a:hover {
@@ -86,15 +86,14 @@
       margin-top: 2rem;
       background-color: #00cfff;
       color: #000;
-      padding: 1rem 2.5rem;
+      padding: 1rem 2rem;
       font-weight: bold;
       text-decoration: none;
       border-radius: 8px;
-      transition: background-color 0.3s ease;
+      transition: 0.3s;
       z-index: 1;
       position: relative;
       font-family: 'Orbitron', sans-serif;
-      font-size: 1.2rem;
     }
 
     .btn-download:hover {
@@ -102,53 +101,41 @@
     }
 
     main {
-      padding: 6rem 2rem 4rem; /* top padding maior para compensar nav fixa */
+      padding: 4rem 2rem;
       max-width: 1000px;
       margin: auto;
     }
 
     section {
-      margin-bottom: 5rem;
+      margin-bottom: 4rem;
     }
 
     section h2 {
-      font-family: 'Orbitron', sans-serif;
-      font-size: 2.4rem;
-      margin-bottom: 1.5rem;
+      font-size: 2rem;
+      margin-bottom: 1rem;
       color: #00cfff;
-      border-bottom: 3px solid #00cfff;
+      border-bottom: 2px solid #00cfff;
       display: inline-block;
-      padding-bottom: 0.6rem;
+      padding-bottom: 0.5rem;
+      font-family: 'Orbitron', sans-serif;
     }
 
     section p, section ul {
-      margin-bottom: 1.8rem;
+      margin-bottom: 1.5rem;
       color: #ccc;
-      font-size: 1.1rem;
-      max-width: 760px;
-    }
-
-    section ul li {
-      margin-bottom: 0.8rem;
     }
 
     .gallery {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 1.2rem;
-      margin-top: 1.5rem;
+      gap: 1rem;
+      margin-top: 1rem;
     }
 
     .gallery img {
       width: 100%;
       border-radius: 12px;
-      box-shadow: 0 0 20px rgba(0, 128, 255, 0.25);
-      transition: transform 0.3s ease;
-      cursor: pointer;
-    }
-    .gallery img:hover {
-      transform: scale(1.05);
-      box-shadow: 0 0 30px rgba(0, 128, 255, 0.5);
+      box-shadow: 0 0 15px rgba(0, 128, 255, 0.2);
     }
 
     footer {
@@ -156,29 +143,21 @@
       text-align: center;
       padding: 2rem;
       color: #777;
-      font-size: 0.95rem;
+      font-size: 0.9rem;
     }
 
-    /* Responsividade */
     @media (max-width: 600px) {
       nav a {
         display: block;
         margin: 10px 0;
-        font-size: 1.2rem;
       }
       .btn-download {
         width: 100%;
-        text-align: center;
       }
     }
   </style>
 </head>
 <body>
-  <header>
-    <h1>MindRush</h1>
-    <p>Sobrevive. Aprende. Vence.</p>
-    <a class="btn-download" href="#download">Baixar Agora</a>
-  </header>
 
   <nav>
     <a href="#sobre">Sobre o Jogo</a>
@@ -186,6 +165,12 @@
     <a href="#projeto">Sobre o Projeto</a>
     <a href="#contato">Contato</a>
   </nav>
+
+  <header>
+    <h1>MindRush</h1>
+    <p>Sobrevive. Aprende. Vence.</p>
+    <a class="btn-download" href="#download">Baixar Agora</a>
+  </header>
 
   <main>
     <section id="sobre">
@@ -198,9 +183,9 @@
         <li>✔️ Ideal para jogar com amigos ou em eventos escolares</li>
       </ul>
       <div class="gallery">
-        <img src="IMAGEM1_DO_JOGO.jpg" alt="Screenshot do jogo" />
-        <img src="IMAGEM2_DO_JOGO.jpg" alt="Screenshot do jogo" />
-        <img src="IMAGEM3_DO_JOGO.jpg" alt="Screenshot do jogo" />
+        <img src="IMAGEM1_DO_JOGO.jpg" alt="Screenshot do jogo">
+        <img src="IMAGEM2_DO_JOGO.jpg" alt="Screenshot do jogo">
+        <img src="IMAGEM3_DO_JOGO.jpg" alt="Screenshot do jogo">
       </div>
     </section>
 
@@ -233,5 +218,6 @@
   <footer>
     <p>&copy; 2025 MindRush. Todos os direitos reservados.</p>
   </footer>
+
 </body>
 </html>
