@@ -4,7 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>MindRush</title>
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+  <!-- Fontes: Orbitron para títulos, Open Sans para textos -->
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Open+Sans&display=swap" rel="stylesheet" />
   <style>
     * {
       margin: 0;
@@ -13,10 +14,10 @@
     }
 
     body {
-      font-family: 'Orbitron', sans-serif;
+      font-family: 'Open Sans', sans-serif;
       background: linear-gradient(180deg, #0a0a0a 0%, #111 100%);
       color: #fff;
-      line-height: 1.7;
+      line-height: 1.8;
     }
 
     header {
@@ -39,15 +40,17 @@
     }
 
     header h1 {
+      font-family: 'Orbitron', sans-serif;
       font-size: 4rem;
       z-index: 1;
       position: relative;
       color: #00cfff;
+      margin-bottom: 0.5rem;
     }
 
     header p {
-      font-size: 1.5rem;
-      margin-top: 1rem;
+      font-size: 1.6rem;
+      margin-top: 0.5rem;
       color: #ccc;
       z-index: 1;
       position: relative;
@@ -55,14 +58,27 @@
 
     nav {
       background: #222;
-      padding: 10px;
+      padding: 1rem 0;
       text-align: center;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 10;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.7);
     }
+
     nav a {
       color: white;
-      margin: 0 15px;
+      margin: 0 20px;
       text-decoration: none;
       font-weight: bold;
+      font-family: 'Orbitron', sans-serif;
+      font-size: 1.1rem;
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+      color: #00cfff;
     }
 
     .btn-download {
@@ -70,13 +86,15 @@
       margin-top: 2rem;
       background-color: #00cfff;
       color: #000;
-      padding: 1rem 2rem;
+      padding: 1rem 2.5rem;
       font-weight: bold;
       text-decoration: none;
       border-radius: 8px;
-      transition: 0.3s;
+      transition: background-color 0.3s ease;
       z-index: 1;
       position: relative;
+      font-family: 'Orbitron', sans-serif;
+      font-size: 1.2rem;
     }
 
     .btn-download:hover {
@@ -84,40 +102,53 @@
     }
 
     main {
-      padding: 4rem 2rem;
+      padding: 6rem 2rem 4rem; /* top padding maior para compensar nav fixa */
       max-width: 1000px;
       margin: auto;
     }
 
     section {
-      margin-bottom: 4rem;
+      margin-bottom: 5rem;
     }
 
     section h2 {
-      font-size: 2rem;
-      margin-bottom: 1rem;
+      font-family: 'Orbitron', sans-serif;
+      font-size: 2.4rem;
+      margin-bottom: 1.5rem;
       color: #00cfff;
-      border-bottom: 2px solid #00cfff;
+      border-bottom: 3px solid #00cfff;
       display: inline-block;
-      padding-bottom: 0.5rem;
+      padding-bottom: 0.6rem;
     }
 
     section p, section ul {
-      margin-bottom: 1.5rem;
+      margin-bottom: 1.8rem;
       color: #ccc;
+      font-size: 1.1rem;
+      max-width: 760px;
+    }
+
+    section ul li {
+      margin-bottom: 0.8rem;
     }
 
     .gallery {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 1rem;
-      margin-top: 1rem;
+      gap: 1.2rem;
+      margin-top: 1.5rem;
     }
 
     .gallery img {
       width: 100%;
       border-radius: 12px;
-      box-shadow: 0 0 15px rgba(0, 128, 255, 0.2);
+      box-shadow: 0 0 20px rgba(0, 128, 255, 0.25);
+      transition: transform 0.3s ease;
+      cursor: pointer;
+    }
+    .gallery img:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 30px rgba(0, 128, 255, 0.5);
     }
 
     footer {
@@ -125,17 +156,21 @@
       text-align: center;
       padding: 2rem;
       color: #777;
-      font-size: 0.9rem;
+      font-size: 0.95rem;
     }
 
-      @media (max-width: 600px) {
+    /* Responsividade */
+    @media (max-width: 600px) {
       nav a {
         display: block;
         margin: 10px 0;
+        font-size: 1.2rem;
       }
-      .download-btn {
+      .btn-download {
         width: 100%;
+        text-align: center;
       }
+    }
   </style>
 </head>
 <body>
@@ -153,7 +188,7 @@
   </nav>
 
   <main>
-    <section>
+    <section id="sobre">
       <h2>Sobre o Jogo</h2>
       <p>MindRush é um jogo multiplayer competitivo onde estratégia, reflexo e tomada de decisão definem os sobreviventes. Inspirado em quizzes interativos, os jogadores devem escolher as respostas corretas enquanto se mantêm na arena — caia, e estás fora. O último em pé vence.</p>
       <ul>
@@ -163,9 +198,9 @@
         <li>✔️ Ideal para jogar com amigos ou em eventos escolares</li>
       </ul>
       <div class="gallery">
-        <img src="IMAGEM1_DO_JOGO.jpg" alt="Screenshot do jogo">
-        <img src="IMAGEM2_DO_JOGO.jpg" alt="Screenshot do jogo">
-        <img src="IMAGEM3_DO_JOGO.jpg" alt="Screenshot do jogo">
+        <img src="IMAGEM1_DO_JOGO.jpg" alt="Screenshot do jogo" />
+        <img src="IMAGEM2_DO_JOGO.jpg" alt="Screenshot do jogo" />
+        <img src="IMAGEM3_DO_JOGO.jpg" alt="Screenshot do jogo" />
       </div>
     </section>
 
@@ -177,7 +212,7 @@
       <p><strong>Instruções:</strong> Extrai o ficheiro ZIP, abre a pasta e executa o arquivo "MindRush.exe"</p>
     </section>
 
-    <section>
+    <section id="projeto">
       <h2>Sobre o Projeto</h2>
       <p>MindRush foi desenvolvido como parte da minha Prova de Aptidão Profissional (PAP), no curso de Técnico de Multimédia da Escola Secundária Públia Hortênsia de Castro.</p>
       <ul>
@@ -186,7 +221,7 @@
       </ul>
     </section>
 
-    <section>
+    <section id="contato">
       <h2>Contato & Créditos</h2>
       <p><strong>Tales Brabec Canuto Aragão Barreto</strong></p>
       <p>Email: <a href="mailto:tales1brabec7@gmail.com" style="color:#00cfff">tales1brabec7@gmail.com</a></p>
