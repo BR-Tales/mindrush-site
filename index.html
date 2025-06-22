@@ -3,66 +3,108 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MindRush - Jogo 3D</title>
+  <title>MindRush</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Open+Sans&display=swap" rel="stylesheet">
   <style>
-    body {
+    :root {
+      --primary: #00BFFF; /* azul céu */
+      --dark-bg: #0e1a26;
+      --light-text: #f0f0f0;
+      --accent: #ff4757; /* vermelho leve para destaque */
+    }
+
+    * {
       margin: 0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Open Sans', sans-serif;
+      background-color: var(--dark-bg);
+      color: var(--light-text);
       line-height: 1.6;
-      background-color: #f4f4f4;
-      color: #333;
     }
-    header, footer {
-      background-color: #111;
-      color: white;
-      padding: 20px;
+
+    header {
+      background: linear-gradient(to bottom, #0e1a26, #112);
       text-align: center;
+      padding: 60px 20px 40px;
     }
-    nav {
-      background: #222;
-      padding: 10px;
-      text-align: center;
+
+    header h1 {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 3rem;
+      color: var(--primary);
+      margin-bottom: 10px;
     }
-    nav a {
+
+    header p {
+      font-size: 1.2rem;
+      color: #ccc;
+      margin-bottom: 20px;
+    }
+
+    .btn-download {
+      display: inline-block;
+      padding: 12px 28px;
+      background: var(--primary);
       color: white;
-      margin: 0 15px;
-      text-decoration: none;
       font-weight: bold;
+      text-decoration: none;
+      border-radius: 8px;
+      transition: 0.3s;
     }
-    .container {
+
+    .btn-download:hover {
+      background: #008bcc;
+    }
+
+    section {
+      padding: 60px 20px;
       max-width: 1000px;
       margin: auto;
+    }
+
+    section h2 {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 2rem;
+      color: var(--primary);
+      margin-bottom: 20px;
+    }
+
+    .card {
+      background-color: #1a2a38;
       padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 0 12px rgba(0,0,0,0.3);
+      margin-bottom: 30px;
     }
-    section {
-      margin-bottom: 40px;
-    }
-    .download-btn {
-      display: inline-block;
-      background: #007bff;
-      color: white;
-      padding: 15px 25px;
-      text-decoration: none;
-      font-size: 1.2em;
+
+    .img-preview {
+      width: 100%;
+      max-height: 400px;
+      object-fit: cover;
       border-radius: 8px;
       margin-top: 15px;
     }
-    img.placeholder {
-      width: 100%;
-      max-width: 600px;
-      height: 300px;
-      background: #ccc;
-      display: block;
-      margin: 20px auto;
-      border-radius: 8px;
+
+    footer {
+      background-color: #0b151f;
+      text-align: center;
+      padding: 30px;
+      font-size: 0.9rem;
+      color: #888;
     }
-    @media (max-width: 600px) {
-      nav a {
-        display: block;
-        margin: 10px 0;
+
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 2.2rem;
       }
-      .download-btn {
-        width: 100%;
+
+      .btn-download {
+        padding: 10px 20px;
+        font-size: 0.95rem;
       }
     }
   </style>
@@ -71,59 +113,50 @@
   <header>
     <h1>MindRush</h1>
     <p>Sobrevive. Aprende. Vence.</p>
-    <a href="#download" class="download-btn">Download</a>
+    <a class="btn-download" href="#download">Download</a>
   </header>
 
-  <nav>
-    <a href="#sobre">Sobre o Jogo</a>
-    <a href="#download">Download</a>
-    <a href="#projeto">Sobre o Projeto</a>
-    <a href="#contato">Contato</a>
-  </nav>
+  <section id="sobre">
+    <h2>Sobre o Jogo</h2>
+    <div class="card">
+      <p><strong>MindRush</strong> é um jogo 3D competitivo onde o jogador testa seus conhecimentos e reflexos em uma arena dinâmica. Cada rodada é um desafio de sobrevivência, lógica e estratégia. Ideal para grupos de amigos e escolas, combina diversão com aprendizagem.</p>
+      <p><strong>Principais funcionalidades:</strong> Multiplayer até 15 jogadores, sistema de perguntas e respostas, movimentação livre, empurrões, sistema de pontuação e pódio final.</p>
+      <p><strong>Tecnologias usadas:</strong> Unity, Blender, C#, Photoshop.</p>
+      <img src="screenshot.jpg" alt="Imagem do jogo" class="img-preview">
+    </div>
+  </section>
 
-  <div class="container">
-    <section id="sobre">
-      <h2>Sobre o Jogo</h2>
-      <p><strong>MindRush</strong> é um jogo 3D competitivo e educativo onde os jogadores devem sobreviver a desafios enquanto respondem perguntas. Ideal para jovens e estudantes, combina diversão com conhecimento.</p>
-      <ul>
-        <li>Multiplayer até 15 jogadores</li>
-        <li>Plataforma dinâmica com perguntas de várias disciplinas</li>
-        <li>Empurra os adversários, ganha pontos e sobrevive até o fim</li>
-      </ul>
-      <p>Tecnologias: Unity, Blender</p>
-      <div class="img-placeholder">
-        <img src="screenshot.jpg" alt="Imagem do jogo" class="placeholder">
-      </div>
-    </section>
+  <section id="download">
+    <h2>Download</h2>
+    <div class="card">
+      <p>Baixe agora a versão mais recente do MindRush:</p>
+      <a class="btn-download" href="#">Baixar Jogo</a>
+      <p><strong>Sistema:</strong> Windows (64 bits)</p>
+      <p><strong>Instalação:</strong> Basta extrair o ZIP e executar o ficheiro MindRush.exe</p>
+    </div>
+  </section>
 
-    <section id="download">
-      <h2>Download</h2>
-      <p>Versão para Windows</p>
-      <a href="link-do-jogo.zip" class="download-btn">Baixar Jogo</a>
-      <p style="margin-top:10px;">Instruções: extraia o ZIP e execute o ficheiro MindRush.exe</p>
-    </section>
+  <section id="pap">
+    <h2>Sobre o Projeto</h2>
+    <div class="card">
+      <p>Este jogo foi desenvolvido como parte da Prova de Aptidão Profissional (PAP) do Curso Profissional Técnico de Multimédia da Escola Secundária Públia Hortênsia de Castro.</p>
+      <p><strong>Duração do desenvolvimento:</strong> 8 meses</p>
+      <p><strong>Competências:</strong> Programação, modelação 3D, design gráfico, game design, trabalho em equipa.</p>
+    </div>
+  </section>
 
-    <section id="projeto">
-      <h2>Sobre o Projeto</h2>
-      <p>Este jogo foi desenvolvido como parte da <strong>Prova de Aptidão Profissional</strong> no curso de Técnico de Multimédia da <strong>Escola Secundária Públia Hortênsia de Castro</strong>.</p>
-      <ul>
-        <li>Duração: 8 meses</li>
-        <li>Ferramentas: Unity, Blender, Photoshop</li>
-        <li>Competências: design 3D, lógica de programação, UI/UX</li>
-      </ul>
-    </section>
-
-    <section id="contato">
-      <h2>Contato / Créditos</h2>
-      <p>Desenvolvido por <strong>Tales Brabec Canuto Aragão Barreto</strong></p>
-      <p>Email: tales1brabec7@gmail.com</p>
-      <p>Instagram: <a href="https://instagram.com/tales_brabec" target="_blank">@tales_brabec</a></p>
-      <p>Obrigado a todos os professores e colegas pelo apoio.</p>
-    </section>
-  </div>
+  <section id="contato">
+    <h2>Contato / Créditos</h2>
+    <div class="card">
+      <p><strong>Tales Brabec Canuto Aragão Barreto</strong></p>
+      <p><strong>Email:</strong> tales1brabec7@gmail.com</p>
+      <p><strong>Instagram:</strong> <a href="https://instagram.com/tales_brabec" target="_blank" style="color: var(--primary);">@tales_brabec</a></p>
+      <p>Agradecimentos especiais aos professores e colegas que acompanharam a jornada deste projeto.</p>
+    </div>
+  </section>
 
   <footer>
-    <p>&copy; 2025 Tales Barreto | MindRush</p>
+    &copy; 2025 MindRush. Todos os direitos reservados.
   </footer>
 </body>
 </html>
