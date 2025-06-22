@@ -1,18 +1,12 @@
-<!DOCTYPE html>Add commentMore actions
+<!DOCTYPE html>
 <html lang="pt">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>MindRush</title>
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+  <!-- Fontes Orbitron (títulos) e Exo 2 (texto) -->
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Exo+2&display=swap" rel="stylesheet">
   <style>
-
-
-
-
-
-
-
     * {
       margin: 0;
       padding: 0;
@@ -20,7 +14,7 @@
     }
 
     body {
-      font-family: 'Orbitron', sans-serif;
+      font-family: 'Exo 2', sans-serif;
       background: linear-gradient(180deg, #0a0a0a 0%, #111 100%);
       color: #fff;
       line-height: 1.7;
@@ -28,10 +22,11 @@
 
     header {
       background-color: rgba(0, 128, 255, 0.1);
-      padding: 4rem 2rem;
+      padding: 6rem 2rem 4rem;
       text-align: center;
       position: relative;
       overflow: hidden;
+      margin-top: 70px;
     }
 
     header::after {
@@ -50,6 +45,7 @@
       z-index: 1;
       position: relative;
       color: #00cfff;
+      font-family: 'Orbitron', sans-serif;
     }
 
     header p {
@@ -58,6 +54,31 @@
       color: #ccc;
       z-index: 1;
       position: relative;
+    }
+
+    nav {
+      background: #111;
+      padding: 15px 0;
+      text-align: center;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 100;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.5);
+    }
+
+    nav a {
+      font-family: 'Orbitron', sans-serif;
+      color: white;
+      margin: 0 20px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    nav a:hover {
+      color: #00cfff;
     }
 
     .btn-download {
@@ -72,6 +93,7 @@
       transition: 0.3s;
       z-index: 1;
       position: relative;
+      font-family: 'Orbitron', sans-serif;
     }
 
     .btn-download:hover {
@@ -89,13 +111,13 @@
     }
 
     section h2 {
-
       font-size: 2rem;
       margin-bottom: 1rem;
       color: #00cfff;
       border-bottom: 2px solid #00cfff;
       display: inline-block;
       padding-bottom: 0.5rem;
+      font-family: 'Orbitron', sans-serif;
     }
 
     section p, section ul {
@@ -114,8 +136,6 @@
       width: 100%;
       border-radius: 12px;
       box-shadow: 0 0 15px rgba(0, 128, 255, 0.2);
-
-
     }
 
     footer {
@@ -124,22 +144,28 @@
       padding: 2rem;
       color: #777;
       font-size: 0.9rem;
+    }
 
-
-
-
-
-
-
-
-
-
-
-
+    @media (max-width: 600px) {
+      nav a {
+        display: block;
+        margin: 10px 0;
+      }
+      .btn-download {
+        width: 100%;
+      }
     }
   </style>
 </head>
 <body>
+
+  <nav>
+    <a href="#sobre">Sobre o Jogo</a>
+    <a href="#download">Download</a>
+    <a href="#projeto">Sobre o Projeto</a>
+    <a href="#contato">Contato</a>
+  </nav>
+
   <header>
     <h1>MindRush</h1>
     <p>Sobrevive. Aprende. Vence.</p>
@@ -147,7 +173,7 @@
   </header>
 
   <main>
-    <section>
+    <section id="sobre">
       <h2>Sobre o Jogo</h2>
       <p>MindRush é um jogo multiplayer competitivo onde estratégia, reflexo e tomada de decisão definem os sobreviventes. Inspirado em quizzes interativos, os jogadores devem escolher as respostas corretas enquanto se mantêm na arena — caia, e estás fora. O último em pé vence.</p>
       <ul>
@@ -171,7 +197,7 @@
       <p><strong>Instruções:</strong> Extrai o ficheiro ZIP, abre a pasta e executa o arquivo "MindRush.exe"</p>
     </section>
 
-    <section>
+    <section id="projeto">
       <h2>Sobre o Projeto</h2>
       <p>MindRush foi desenvolvido como parte da minha Prova de Aptidão Profissional (PAP), no curso de Técnico de Multimédia da Escola Secundária Públia Hortênsia de Castro.</p>
       <ul>
@@ -180,7 +206,7 @@
       </ul>
     </section>
 
-    <section>
+    <section id="contato">
       <h2>Contato & Créditos</h2>
       <p><strong>Tales Brabec Canuto Aragão Barreto</strong></p>
       <p>Email: <a href="mailto:tales1brabec7@gmail.com" style="color:#00cfff">tales1brabec7@gmail.com</a></p>
@@ -192,5 +218,6 @@
   <footer>
     <p>&copy; 2025 MindRush. Todos os direitos reservados.</p>
   </footer>
+
 </body>
 </html>
