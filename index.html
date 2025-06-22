@@ -1,12 +1,18 @@
 <!DOCTYPE html>
-<html lang="pt">More actions
+<html lang="pt">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>MindRush</title>
-  <!-- Fontes: Orbitron para títulos, Open Sans para textos -->
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Open+Sans&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Open+Sans&display=swap" rel="stylesheet">
   <style>
+    :root {
+      --primary: #00BFFF; /* azul céu */
+      --dark-bg: #0e1a26;
+      --light-text: #f0f0f0;
+      --accent: #ff4757; /* vermelho leve para destaque */
+    }
+
     * {
       margin: 0;
       padding: 0;
@@ -15,160 +21,101 @@
 
     body {
       font-family: 'Open Sans', sans-serif;
-      background: linear-gradient(180deg, #0a0a0a 0%, #111 100%);
-      color: #fff;
-      line-height: 1.8;
+      background-color: var(--dark-bg);
+      color: var(--light-text);
+      line-height: 1.6;
+
+
     }
 
     header {
-      background-color: rgba(0, 128, 255, 0.1);
-      padding: 4rem 2rem;
-      text-align: center;
-      position: relative;
-      overflow: hidden;
-    }
+      background: linear-gradient(to bottom, #0e1a26, #112);
 
-    header::after {
-      content: "";
-      background-image: url('IMAGEM_DO_JOGO.jpg');
-      background-size: cover;
-      background-position: center;
-      opacity: 0.15;
-      top: 0; left: 0; right: 0; bottom: 0;
-      position: absolute;
-      z-index: 0;
+      text-align: center;
+      padding: 60px 20px 40px;
     }
 
     header h1 {
       font-family: 'Orbitron', sans-serif;
-      font-size: 4rem;
-      z-index: 1;
-      position: relative;
-      color: #00cfff;
-      margin-bottom: 0.5rem;
+      font-size: 3rem;
+      color: var(--primary);
+      margin-bottom: 10px;
     }
 
     header p {
-      font-size: 1.6rem;
-      margin-top: 0.5rem;
+      font-size: 1.2rem;
       color: #ccc;
-      z-index: 1;
-      position: relative;
-    }
-
-    nav {
-      background: #222;
-      padding: 1rem 0;
-      text-align: center;
-      position: fixed;
-      top: 0;
-      width: 100%;
-      z-index: 10;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.7);
-    }
-
-    nav a {
-      color: white;
-      margin: 0 20px;
-      text-decoration: none;
-      font-weight: bold;
-      font-family: 'Orbitron', sans-serif;
-      font-size: 1.1rem;
-      transition: color 0.3s ease;
-    }
-
-    nav a:hover {
-      color: #00cfff;
+      margin-bottom: 20px;
     }
 
     .btn-download {
       display: inline-block;
-      margin-top: 2rem;
-      background-color: #00cfff;
-      color: #000;
-      padding: 1rem 2.5rem;
+      padding: 12px 28px;
+      background: var(--primary);
+      color: white;
+
+
       font-weight: bold;
       text-decoration: none;
       border-radius: 8px;
-      transition: background-color 0.3s ease;
-      z-index: 1;
-      position: relative;
-      font-family: 'Orbitron', sans-serif;
-      font-size: 1.2rem;
+      transition: 0.3s;
     }
 
     .btn-download:hover {
-      background-color: #00aacc;
-    }
-
-    main {
-      padding: 6rem 2rem 4rem; /* top padding maior para compensar nav fixa */
-      max-width: 1000px;
-      margin: auto;
+      background: #008bcc;
     }
 
     section {
-      margin-bottom: 5rem;
+      padding: 60px 20px;
+      max-width: 1000px;
+      margin: auto;
+
     }
 
     section h2 {
       font-family: 'Orbitron', sans-serif;
-      font-size: 2.4rem;
-      margin-bottom: 1.5rem;
-      color: #00cfff;
-      border-bottom: 3px solid #00cfff;
-      display: inline-block;
-      padding-bottom: 0.6rem;
+      font-size: 2rem;
+      color: var(--primary);
+      margin-bottom: 20px;
     }
 
-    section p, section ul {
-      margin-bottom: 1.8rem;
-      color: #ccc;
-      font-size: 1.1rem;
-      max-width: 760px;
-    }
-
-    section ul li {
-      margin-bottom: 0.8rem;
-    }
-
-    .gallery {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 1.2rem;
-      margin-top: 1.5rem;
-    }
-
-    .gallery img {
-      width: 100%;
+    .card {
+      background-color: #1a2a38;
+      padding: 20px;
       border-radius: 12px;
-      box-shadow: 0 0 20px rgba(0, 128, 255, 0.25);
-      transition: transform 0.3s ease;
-      cursor: pointer;
+      box-shadow: 0 0 12px rgba(0,0,0,0.3);
+      margin-bottom: 30px;
+
+
     }
-    .gallery img:hover {
-      transform: scale(1.05);
-      box-shadow: 0 0 30px rgba(0, 128, 255, 0.5);
+
+    .img-preview {
+      width: 100%;
+      max-height: 400px;
+      object-fit: cover;
+
+
+
+      border-radius: 8px;
+      margin-top: 15px;
     }
 
     footer {
-      background-color: #000;
+      background-color: #0b151f;
       text-align: center;
-      padding: 2rem;
-      color: #777;
-      font-size: 0.95rem;
+      padding: 30px;
+      font-size: 0.9rem;
+      color: #888;
     }
 
-    /* Responsividade */
-    @media (max-width: 600px) {
-      nav a {
-        display: block;
-        margin: 10px 0;
-        font-size: 1.2rem;
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 2.2rem;
       }
+
       .btn-download {
-        width: 100%;
-        text-align: center;
+        padding: 10px 20px;
+        font-size: 0.95rem;
       }
     }
   </style>
@@ -177,61 +124,49 @@
   <header>
     <h1>MindRush</h1>
     <p>Sobrevive. Aprende. Vence.</p>
-    <a class="btn-download" href="#download">Baixar Agora</a>
+    <a class="btn-download" href="#download">Download</a>
   </header>
 
-  <nav>
-    <a href="#sobre">Sobre o Jogo</a>
-    <a href="#download">Download</a>
-    <a href="#projeto">Sobre o Projeto</a>
-    <a href="#contato">Contato</a>
-  </nav>
+  <section id="sobre">
+    <h2>Sobre o Jogo</h2>
+    <div class="card">
+      <p><strong>MindRush</strong> é um jogo 3D competitivo onde o jogador testa seus conhecimentos e reflexos em uma arena dinâmica. Cada rodada é um desafio de sobrevivência, lógica e estratégia. Ideal para grupos de amigos e escolas, combina diversão com aprendizagem.</p>
+      <p><strong>Principais funcionalidades:</strong> Multiplayer até 15 jogadores, sistema de perguntas e respostas, movimentação livre, empurrões, sistema de pontuação e pódio final.</p>
+      <p><strong>Tecnologias usadas:</strong> Unity, Blender, C#, Photoshop.</p>
+      <img src="screenshot.jpg" alt="Imagem do jogo" class="img-preview">
+    </div>
+  </section>
 
-  <main>
-    <section id="sobre">
-      <h2>Sobre o Jogo</h2>
-      <p>MindRush é um jogo multiplayer competitivo onde estratégia, reflexo e tomada de decisão definem os sobreviventes. Inspirado em quizzes interativos, os jogadores devem escolher as respostas corretas enquanto se mantêm na arena — caia, e estás fora. O último em pé vence.</p>
-      <ul>
-        <li>✔️ Até 15 jogadores por sala</li>
-        <li>✔️ Empurra os oponentes para fora da arena</li>
-        <li>✔️ Plataforma interativa e divertida</li>
-        <li>✔️ Ideal para jogar com amigos ou em eventos escolares</li>
-      </ul>
-      <div class="gallery">
-        <img src="IMAGEM1_DO_JOGO.jpg" alt="Screenshot do jogo" />
-        <img src="IMAGEM2_DO_JOGO.jpg" alt="Screenshot do jogo" />
-        <img src="IMAGEM3_DO_JOGO.jpg" alt="Screenshot do jogo" />
-      </div>
-    </section>
+  <section id="download">
+    <h2>Download</h2>
+    <div class="card">
+      <p>Baixe agora a versão mais recente do MindRush:</p>
+      <a class="btn-download" href="#">Baixar Jogo</a>
+      <p><strong>Sistema:</strong> Windows (64 bits)</p>
+      <p><strong>Instalação:</strong> Basta extrair o ZIP e executar o ficheiro MindRush.exe</p>
+    </div>
+  </section>
 
-    <section id="download">
-      <h2>Download</h2>
-      <p>Clica abaixo para baixar o MindRush (versão Windows):</p>
-      <a class="btn-download" href="#">Download (ZIP)</a>
-      <p><strong>Requisitos:</strong> Windows 10 ou superior</p>
-      <p><strong>Instruções:</strong> Extrai o ficheiro ZIP, abre a pasta e executa o arquivo "MindRush.exe"</p>
-    </section>
+  <section id="pap">
+    <h2>Sobre o Projeto</h2>
+    <div class="card">
+      <p>Este jogo foi desenvolvido como parte da Prova de Aptidão Profissional (PAP) do Curso Profissional Técnico de Multimédia da Escola Secundária Públia Hortênsia de Castro.</p>
+      <p><strong>Duração do desenvolvimento:</strong> 8 meses</p>
+      <p><strong>Competências:</strong> Programação, modelação 3D, design gráfico, game design, trabalho em equipa.</p>
+    </div>
+  </section>
 
-    <section id="projeto">
-      <h2>Sobre o Projeto</h2>
-      <p>MindRush foi desenvolvido como parte da minha Prova de Aptidão Profissional (PAP), no curso de Técnico de Multimédia da Escola Secundária Públia Hortênsia de Castro.</p>
-      <ul>
-        <li>⏱ Duração do desenvolvimento: vários meses entre aulas, pesquisa e programação</li>
-        <li>🧠 Competências adquiridas: Unity, Blender, programação em C#, design de interface, lógica de jogo</li>
-      </ul>
-    </section>
-
-    <section id="contato">
-      <h2>Contato & Créditos</h2>
+  <section id="contato">
+    <h2>Contato / Créditos</h2>
+    <div class="card">
       <p><strong>Tales Brabec Canuto Aragão Barreto</strong></p>
-      <p>Email: <a href="mailto:tales1brabec7@gmail.com" style="color:#00cfff">tales1brabec7@gmail.com</a></p>
-      <p>Instagram: <a href="https://instagram.com/tales_brabec" target="_blank" style="color:#00cfff">@tales_brabec</a></p>
-      <p>Agradecimentos especiais aos professores e colegas que me apoiaram ao longo do desenvolvimento.</p>
-    </section>
-  </main>
-
+      <p><strong>Email:</strong> tales1brabec7@gmail.com</p>
+      <p><strong>Instagram:</strong> <a href="https://instagram.com/tales_brabec" target="_blank" style="color: var(--primary);">@tales_brabec</a></p>
+      <p>Agradecimentos especiais aos professores e colegas que acompanharam a jornada deste projeto.</p>
+    </div>
+  </section>
   <footer>
-    <p>&copy; 2025 MindRush. Todos os direitos reservados.</p>
+    &copy; 2025 MindRush. Todos os direitos reservados.
   </footer>
 </body>
 </html>
