@@ -31,13 +31,16 @@
       align-items: center;
     }
 
-    header video {
+    .background-video {
       position: absolute;
       top: 0; left: 0;
       width: 100%;
       height: 100%;
       object-fit: cover;
+      object-position: center;
       z-index: 0;
+      opacity: 0.3;
+      pointer-events: none;   /* Evita clique acidental no vídeo */
     }
 
     .header-content {
@@ -177,9 +180,9 @@
 </head>
 <body>
 
-  <header>
+  <header style="position: relative; height: 100vh; overflow: hidden;">
     <!-- VÍDEO DE FUNDO -->
-    <video autoplay loop muted playsinline>
+    <video autoplay loop muted playsinline class="background-video">
       <source src="videos/trailer.mp4" type="video/mp4">
       O seu navegador não suporta vídeo em background.
     </video>
