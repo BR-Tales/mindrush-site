@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>MindRush</title>
   <link rel="icon" href="imagens/favicon_io/favicon.ico" type="image/x-icon">
-  <!-- Fontes: Orbitron para títulos, Open Sans para textos -->
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Open+Sans&display=swap" rel="stylesheet" />
   <style>
     * {
@@ -22,38 +21,58 @@
     }
 
     header {
-      background-color: rgba(0, 128, 255, 0.1);
-      padding: 4rem 2rem;
-      text-align: center;
       position: relative;
+      height: 100vh;
       overflow: hidden;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
     }
 
-    header::after {
-      content: "";
-      background-image: url('IMAGEM_DO_JOGO.jpg');
-      background-size: cover;
-      background-position: center;
-      opacity: 0.15;
-      top: 0; left: 0; right: 0; bottom: 0;
+    header video {
       position: absolute;
+      top: 0; left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
       z-index: 0;
     }
 
-    header h1 {
-      font-family: 'Orbitron', sans-serif;
-      font-size: 4rem;
-      z-index: 1;
+    .header-content {
       position: relative;
-      color: #00cfff;
-      margin-bottom: 0.5rem;
+      z-index: 1;
+      padding: 2rem;
     }
 
-    header p {
+    .header-content img {
+      max-width: 500px;
+      height: auto;
+      margin-bottom: 1rem;
+    }
+
+    .header-content p {
       font-size: 1.6rem;
       color: #ccc;
-      z-index: 1;
-      position: relative;
+      margin-bottom: 1rem;
+    }
+
+    .btn-download {
+      display: inline-block;
+      background-color: #00cfff;
+      color: #000;
+      padding: 1rem 2.5rem;
+      font-weight: bold;
+      text-decoration: none;
+      border-radius: 8px;
+      transition: background-color 0.3s ease;
+      font-family: 'Orbitron', sans-serif;
+      font-size: 1.2rem;
+    }
+
+    .btn-download:hover {
+      background-color: #00aacc;
     }
 
     nav {
@@ -62,7 +81,7 @@
       text-align: center;
       position: sticky;
       top: 0;
-      z-index: 100;
+      z-index: 10;
     }
 
     nav a {
@@ -79,28 +98,8 @@
       color: #00cfff;
     }
 
-    .btn-download {
-      display: inline-block;
-      margin-bottom: 2rem;
-      background-color: #00cfff;
-      color: #000;
-      padding: 1rem 2.5rem;
-      font-weight: bold;
-      text-decoration: none;
-      border-radius: 8px;
-      transition: background-color 0.3s ease;
-      z-index: 1;
-      position: relative;
-      font-family: 'Orbitron', sans-serif;
-      font-size: 1.2rem;
-    }
-
-    .btn-download:hover {
-      background-color: #00aacc;
-    }
-
     main {
-      padding: 6rem 2rem 4rem; /* top padding maior para compensar nav fixa */
+      padding: 6rem 2rem 4rem;
       max-width: 1000px;
       margin: auto;
     }
@@ -144,11 +143,12 @@
       transition: transform 0.3s ease;
       cursor: pointer;
     }
+
     .gallery img:hover {
       transform: scale(1.05);
       box-shadow: 0 0 30px rgba(0, 128, 255, 0.5);
     }
-    
+
     ul {
       list-style: none;
       padding-left: 0;
@@ -162,7 +162,6 @@
       font-size: 0.95rem;
     }
 
-    /* Responsividade */
     @media (max-width: 600px) {
       nav a {
         display: block;
@@ -177,10 +176,20 @@
   </style>
 </head>
 <body>
+
   <header>
-    <img src="imagens/mindrush_logosite.png" alt="MindRush Logo" style="max-width: 500px; height: auto; z-index: 1; position: relative;" />
-    <p>Sobrevive. Aprende. Vence.</p>
-    <a class="btn-download" href="#download" target="_blank">Jogar Agora</a>
+    <!-- VÍDEO DE FUNDO -->
+    <video autoplay loop muted playsinline>
+      <source src="videos/trailer.mp4" type="video/mp4">
+      O seu navegador não suporta vídeo em background.
+    </video>
+
+    <!-- CONTEÚDO SOBRE O VÍDEO -->
+    <div class="header-content">
+      <img src="imagens/mindrush_logosite.png" alt="MindRush Logo" />
+      <p>Sobrevive. Aprende. Vence.</p>
+      <a class="btn-download" href="#download" target="_blank">Jogar Agora</a>
+    </div>
   </header>
 
   <nav>
@@ -189,7 +198,7 @@
     <a href="#projeto">Sobre o Projeto</a>
     <a href="#contato">Contato</a>
   </nav>
-
+  
   <main>
     <section id="sobre">
       <h2>Sobre o Jogo</h2>
